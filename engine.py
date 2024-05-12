@@ -44,14 +44,8 @@ def train_one_epoch(dataloader:Iterable,  model_enc:torch.nn.Module, model_dec:t
         
         
         if i_batch %100 == 0:
-            batches_end = datetime.now()
-            avg_time = (batches_end - batches_start)/80
-            print('\n \n average batch time for batch size of', imgs.shape[0],':', avg_time)
-            batches_start = datetime.now()
-            print('[%d][%d/%d]\t Losses:%.4f\t'
-                  %(epoch, i_batch, len(dataloader), loss.item()))
-            # print('acc1:%.4f\t acc3:%.4f'%(acc[0].item(), acc[1].item()))
-    
+            print('[%d][%d/%d]\t Losses:%.4f\t'%(epoch, i_batch, len(dataloader), loss.item()))
+            #print('acc1:%.3f\t acc3:%.4f'%(acc[0].item(), acc[1].item()))
     return loss_value/len(dataloader)
 
 def test(dataloader:Iterable,  model_enc:torch.nn.Module, model_dec:torch.nn.Module, 

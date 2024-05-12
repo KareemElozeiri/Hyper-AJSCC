@@ -63,7 +63,7 @@ def main(args):
             if (epoch > 0): 
                 val = test(dataloader_vali, model_enc, model_dec, args.channel, 
                     args.snr, criterion, log_writer, epoch, False, args)
-                print(">>>>ACC:", val)
+                print("Epoch {epoch} ACC:", val)
                 if args.type == 'recon':
                     if (epoch == 0) or (val < best_mse):
                         best_mse = val
