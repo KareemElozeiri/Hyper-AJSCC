@@ -122,4 +122,6 @@ def evaluate(dataloader:Iterable,  model_enc:torch.nn.Module, model_dec:torch.nn
         writer.add_scalar('val/snr', snr, idx)
     else:
         writer.add_scalar('val/acc', mse, idx)
+    
+    return mse
             
